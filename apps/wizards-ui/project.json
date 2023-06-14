@@ -2,7 +2,7 @@
   "name": "wizards-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "wizards-ui",
+  "prefix": "ui",
   "sourceRoot": "apps/wizards-ui/src",
   "tags": [],
   "targets": {

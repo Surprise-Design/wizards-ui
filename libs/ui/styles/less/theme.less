@@ -1,0 +1,33 @@
+@import "../../../../node_modules/ng-zorro-antd/style/color/colors.less";
+
+@var-prefix: bra;
+
+:root {
+  .palette(blue, #5462FB);
+  .palette(purple, @purple-6);
+  .palette(cyan, @cyan-6);
+  .palette(green, @green-6);
+  .palette(magenta, @magenta-6);
+  .palette(pink, @pink-6);
+  .palette(red, @red-6);
+  .palette(orange, @orange-6);
+  .palette(yellow, @yellow-6);
+  .palette(volcano, @volcano-6);
+  .palette(geekblue, @geekblue-6);
+  .palette(lime, @lime-6);
+  .palette(gold, @gold-6);
+}
+
+
+.palette(@color-name, @palette-color) {
+  --@{var-prefix}-@{color-name}-1: color(~`colorPalette('@{palette-color}', 1) `);
+  --@{var-prefix}-@{color-name}-2: color(~`colorPalette('@{palette-color}', 2) `);
+  --@{var-prefix}-@{color-name}-3: color(~`colorPalette('@{palette-color}', 3) `);
+  --@{var-prefix}-@{color-name}-4: color(~`colorPalette('@{palette-color}', 4) `);
+  --@{var-prefix}-@{color-name}-5: color(~`colorPalette('@{palette-color}', 5) `);
+  --@{var-prefix}-@{color-name}-6: @palette-color;
+  --@{var-prefix}-@{color-name}-7: color(~`colorPalette('@{palette-color}', 7) `);
+  --@{var-prefix}-@{color-name}-8: color(~`colorPalette('@{palette-color}', 8) `);
+  --@{var-prefix}-@{color-name}-9: color(~`colorPalette('@{palette-color}', 9) `);
+  --@{var-prefix}-@{color-name}-10: color(~`colorPalette('@{palette-color}', 10) `);
+}
