@@ -1,0 +1,23 @@
+<ng-container [formGroup]="$any(controlContainer.control)">
+  <nz-form-item>
+      <nz-form-label *ngIf="!!label" [nzRequired]="required">{{ label }}</nz-form-label>
+      <nz-form-control [nzErrorTip]="errorMessages">
+        <nz-input-group [class.full-width]="fullWidth" [nzSize]="inputSize" [nzPrefix]="prefix" [nzSuffix]="suffix">
+          <input nz-input class="input-text"
+                addHtmlAttribute
+                [attributeValue]="cy || controlName"
+                [class.full-width]="fullWidth"
+                [placeholder]="placeholder"
+                [type]="type"
+                [disabled]="disabled"
+                [formControlName]="controlName"
+                [name]="controlName">
+        </nz-input-group>
+      </nz-form-control>
+      <ng-template #errorMessages let-control>
+        <ng-container *ngIf="$any(controlContainer.control)?.get(controlName)?.hasError('minlength') && $any(controlContainer.control)?.get(controlName)?.touched && errorIfShort">Minimalna ilość znaków to {{ errorIfShort }}</ng-container>
+        <ng-container *ngIf="$any(controlContainer.control)?.get(controlName)?.hasError('maxlength') && $any(controlContainer.control)?.get(controlName)?.touched && errorIfShort">Maksymalna ilość znaków to {{ errorIfToLong }}</ng-container>
+        <ng-container *ngIf="$any(controlContainer.control).get(controlName)?.hasError('email') && $any(controlContainer.control)?.get(controlName)?.touched && errorIfEmail">Zły format adresu E-mail</ng-container>
+      </ng-template>
+  </nz-form-item>
+</ng-container>
