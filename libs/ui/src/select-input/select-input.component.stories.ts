@@ -2,6 +2,7 @@ import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybo
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectInputComponent } from './select-input.component'
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const form = new FormGroup({
   text: new FormControl(null),
@@ -23,7 +24,7 @@ export default {
   component: SelectInputComponent,
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, SelectInputComponent, NzIconModule],
+      imports: [FormsModule, ReactiveFormsModule, SelectInputComponent, NzIconModule, BrowserAnimationsModule],
     }),
     componentWrapperDecorator(
       (story) => `
