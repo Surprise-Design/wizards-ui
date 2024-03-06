@@ -22,7 +22,7 @@ import { AddHTMLAttributeDirective } from './attribute.directive';
   styleUrls: ['./input-text.component.scss']
 })
 
-export class InputTextComponent {
+export class WizardsInputComponent {
   @Input() controlName!: string;
   @Input() disabled = false;
   @Input() label!: string;
@@ -32,7 +32,7 @@ export class InputTextComponent {
   @Input() prefix?: string;
   @Input() suffix?: string;
   @Input() fullWidth? = false
-  @Input() inputSize: 'large' | 'small' | 'default' = 'large'
+  @Input() inputSize: 'large' | 'small' | 'default' = 'default'
   @Input() cy?: string;
   @Input() errorIfEmail = false;
   @Input() errorIfShort?: number;

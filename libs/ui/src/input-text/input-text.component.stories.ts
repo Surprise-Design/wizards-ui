@@ -1,6 +1,6 @@
 import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InputTextComponent } from './input-text.component';
+import { WizardsInputComponent } from './input-text.component';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 const form = new FormGroup({
@@ -8,11 +8,11 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'InputTextComponent',
-  component: InputTextComponent,
+  title: 'WizardsInputComponent',
+  component: WizardsInputComponent,
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, InputTextComponent, NzIconModule],
+      imports: [FormsModule, ReactiveFormsModule, WizardsInputComponent, NzIconModule],
     }),
     componentWrapperDecorator(
       (story) => `
@@ -25,9 +25,9 @@ export default {
       },
     ),
   ],
-} as Meta<InputTextComponent>;
+} as Meta<WizardsInputComponent>;
 
-const Template: Story<InputTextComponent> = (args: InputTextComponent) => {
+const Template: Story<WizardsInputComponent> = (args: WizardsInputComponent) => {
     return {
       template: `
         <wiz-input-text
