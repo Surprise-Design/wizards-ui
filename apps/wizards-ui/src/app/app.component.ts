@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { InputTextComponent } from '@wizards-ui/ui'
+import { InputTextComponent, SelectInputComponent } from '@wizards-ui/ui'
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, InputTextComponent, ReactiveFormsModule],
+  imports: [RouterModule, InputTextComponent, ReactiveFormsModule, SelectInputComponent, NzIconModule, FormsModule],
   selector: 'wizards-ui-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

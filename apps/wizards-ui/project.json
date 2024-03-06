@@ -19,7 +19,7 @@
           "apps/wizards-ui/src/favicon.ico",
           "apps/wizards-ui/src/assets"
         ],
-        "styles": ["apps/wizards-ui/src/styles.scss"],
+        "styles": ["node_modules/ng-zorro-antd/ng-zorro-antd.min.css"],
         "scripts": []
       },
       "configurations": {
