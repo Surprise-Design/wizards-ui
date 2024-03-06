@@ -1,6 +1,6 @@
 import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SelectInputComponent } from './select-input.component'
+import { WizardsSelectComponent } from './select-input.component'
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,11 +20,11 @@ const sampleOptions: SelectOptions[] = [
 ];
 
 export default {
-  title: 'SelectInputComponent',
-  component: SelectInputComponent,
+  title: 'WizardsSelectComponent',
+  component: WizardsSelectComponent,
   decorators: [
     moduleMetadata({
-      imports: [FormsModule, ReactiveFormsModule, SelectInputComponent, NzIconModule, BrowserAnimationsModule],
+      imports: [FormsModule, ReactiveFormsModule, WizardsSelectComponent, NzIconModule, BrowserAnimationsModule],
     }),
     componentWrapperDecorator(
       (story) => `
@@ -37,9 +37,9 @@ export default {
       },
     ),
   ],
-} as Meta<SelectInputComponent>;
+} as Meta<WizardsSelectComponent>;
 
-const Template: Story<SelectInputComponent> = (args: SelectInputComponent) => {
+const Template: Story<WizardsSelectComponent> = (args: WizardsSelectComponent) => {
     return {
       template: `
         <wiz-select-input
