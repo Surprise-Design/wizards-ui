@@ -17,7 +17,7 @@ import { AddHTMLAttributeDirective } from './attribute.directive';
     FormsModule,
     ReactiveFormsModule,
   ],
-  selector: 'ui-input-text',
+  selector: 'wiz-input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.scss']
 })
@@ -34,6 +34,9 @@ export class InputTextComponent {
   @Input() fullWidth? = false
   @Input() inputSize: 'large' | 'small' | 'default' = 'large'
   @Input() cy?: string;
+  @Input() errorIfEmail = false;
+  @Input() errorIfShort?: number;
+  @Input() errorIfToLong?: number;
 
   constructor(public controlContainer: ControlContainer) { }
 }

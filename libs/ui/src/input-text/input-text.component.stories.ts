@@ -1,8 +1,6 @@
 import { moduleMetadata, Story, Meta, componentWrapperDecorator } from '@storybook/angular';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextComponent } from './input-text.component';
-
-import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 const form = new FormGroup({
@@ -32,7 +30,7 @@ export default {
 const Template: Story<InputTextComponent> = (args: InputTextComponent) => {
     return {
       template: `
-        <ui-input-text
+        <wiz-input-text
           [label]="label"
           controlName="text"
           disabled="disabled"
@@ -41,11 +39,14 @@ const Template: Story<InputTextComponent> = (args: InputTextComponent) => {
           [placeholder]="placeholder"
           [prefix]="prefix"
           [suffix]="suffix"
-          [fullWidth]="fullWidth">
+          [fullWidth]="fullWidth"
+          [errorIfEmail]="errorIfEmail"
+          [errorIfShort]="errorIfShort"
+          [errorIfToLong]="errorIfToLong">
           <ng-template #suffix>
             <span nz-icon nzType="info-circle"></span>
           </ng-template>
-        </ui-input-text>
+        </wiz-input-text>
       `,
       props: args,
     };
@@ -57,9 +58,12 @@ Primary.args = {
   label: 'Label',
   placeholder: 'placeholder',
   required: false,
-  type: "number",
+  type: "text",
   prefix: "prefix",
   suffix: "suffix",
   fullWidth: false,
+  errorIfEmail: true,
+  errorIfShort: 2,
+  errorIfToLong: 8,
 };
 
