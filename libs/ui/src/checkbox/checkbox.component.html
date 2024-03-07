@@ -1,0 +1,4 @@
+<ng-container *ngIf="controlName" [formGroup]="$any(controlContainer.control)">
+  <label nz-checkbox (change)="onChangeEmitter($event)" [nzDisabled]="disabled" [formControlName]="controlName" name="controlName">{{ label }}</label>
+</ng-container>
+<label *ngIf="ngModel" nz-checkbox [ngModel]="ngModel">{{ label }}</label>
