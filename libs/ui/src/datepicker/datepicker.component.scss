@@ -1,0 +1,12 @@
+nz-form-control {
+  width: 100%;
+  nz-date-picker {
+    width: 100%;
+  }
+}
+.full-width {
+  nz-date-picker {
+    margin: 0 8px 12px 0;
+    width: 100% !important;
+  }
+}

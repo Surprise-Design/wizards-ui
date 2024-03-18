@@ -1,0 +1,16 @@
+<ng-container [formGroup]="$any(controlContainer.control)">
+  <nz-form-item>
+    <nz-form-label *ngIf="!!label" [nzRequired]="required">{{ label }}</nz-form-label>
+    <nz-form-control [class.full-width]="fullWidth">
+      <nz-input-number
+        (change)="onChangeEmitter()"
+        [formControlName]="controlName"
+        [nzMin]="min"
+        [nzMax]="max"
+        [nzStep]="step"
+        [nzDisabled]="disabled"
+        [nzPlaceHolder]="placeholder"
+        [nzPrecision]="precision"></nz-input-number>
+    </nz-form-control>
+  </nz-form-item>
+</ng-container>
