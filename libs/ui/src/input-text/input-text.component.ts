@@ -26,7 +26,7 @@ export class WizardsInputComponent {
   @Input() controlName!: string;
   @Input() disabled = false;
   @Input() label!: string;
-  @Input() placeholder = '';
+  @Input() placeholder!: string;
   @Input() required = false;
   @Input() type = 'text';
   @Input() prefix?: string;

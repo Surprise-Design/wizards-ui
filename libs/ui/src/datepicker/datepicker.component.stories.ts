@@ -49,7 +49,8 @@ const Template: Story<WizardsDatepickerComponent> = (args: WizardsDatepickerComp
       [disabled]="disabled"
       [required]="required"
       [fullWidth]="fullWidth"
-      [dateFormat]="dateFormat">
+      [dateFormat]="dateFormat"
+      [nzDisabledDate]="disabledDate">
     </wiz-datepicker>
       `,
       props: args,
@@ -63,4 +64,9 @@ Primary.args = {
   required: false,
   disabled: false,
   fullWidth: true,
+  nzDisabledDate: (current: Date): boolean => {
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+    return current.getTime() < currentDate.getTime();
+  },
 };

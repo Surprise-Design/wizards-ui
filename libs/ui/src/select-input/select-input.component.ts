@@ -28,7 +28,7 @@ export class WizardsSelectComponent {
   @Input() label!: string;
   @Input() mode: 'multiple' | 'tags' | 'default' = 'default';
   @Input() options: any[] = [];
-  @Input() placeholder = '';
+  @Input() placeholder!: string;
   @Input() required = false;
   @Input() showArrow = true;
   @Output() changed = new EventEmitter();

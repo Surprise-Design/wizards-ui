@@ -7,7 +7,7 @@
                 addHtmlAttribute
                 [attributeValue]="cy || controlName"
                 [class.full-width]="fullWidth"
-                [placeholder]="placeholder"
+                [placeholder]="placeholder ? placeholder : label"
                 [type]="type"
                 [disabled]="disabled"
                 [formControlName]="controlName"

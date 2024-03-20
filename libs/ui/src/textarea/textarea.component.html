@@ -3,9 +3,9 @@
     <nz-form-label *ngIf="!!label" [nzRequired]="required">{{ label }}</nz-form-label>
     <nz-form-control>
       <nz-textarea-count *ngIf="maxCharacters" [nzMaxCharacterCount]="maxCharacters">
-        <textarea nz-input [rows]="rows" [formControlName]="controlName" [placeholder]="placeholder" [nzAutosize]="{ minRows: minRows, maxRows: maxRows }" [disabled]="disabled"></textarea>
+        <textarea nz-input [rows]="rows" [formControlName]="controlName" [placeholder]="placeholder ? placeholder : label" [nzAutosize]="{ minRows: minRows, maxRows: maxRows }" [disabled]="disabled"></textarea>
       </nz-textarea-count>
-      <textarea *ngIf="!maxCharacters" nz-input [rows]="rows" [formControlName]="controlName" [placeholder]="placeholder" [nzAutosize]="{ minRows: minRows, maxRows: maxRows }" [disabled]="disabled"></textarea>
+      <textarea *ngIf="!maxCharacters" nz-input [rows]="rows" [formControlName]="controlName" [placeholder]="placeholder ? placeholder : label" [nzAutosize]="{ minRows: minRows, maxRows: maxRows }" [disabled]="disabled"></textarea>
     </nz-form-control>
   </nz-form-item>
 </ng-container>

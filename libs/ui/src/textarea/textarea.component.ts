@@ -25,7 +25,7 @@ export class WizardsTextareaComponent {
   @Input() disabled = false;
   @Input() minRows!: number;
   @Input() maxRows!: number;
-  @Input() placeholder = '';
+  @Input() placeholder!: string;
   @Input() rows!: number;
   @Input() maxCharacters!: number;
   constructor(public controlContainer: ControlContainer) { }
