@@ -11,6 +11,6 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "@storybook/angular": "^8.0.2"
+    "@storybook/angular": "^7.6.17"
   }
 }

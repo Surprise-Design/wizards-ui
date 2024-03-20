@@ -65,7 +65,12 @@
         "outputDir": "dist/storybook/ui",
         "configDir": "libs/ui/.storybook",
         "browserTarget": "ui:build-storybook",
-        "compodoc": false
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "projects/my-lib"
+        ]
       },
       "configurations": {
         "ci": {
