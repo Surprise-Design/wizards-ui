@@ -30,65 +30,7 @@ Error: Couldn't find any official storybook packages in package.json
 
 Unable to find .eslintrc config file, skipping
 
-🔎 found a 'mdx-to-csf' migration:
-╭ Automigration detected ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│                                                                                                                                                                                                       │
-│   We've detected your project has one or more globs in your 'stories' config that matches .stories.mdx files:                                                                                         │
-│   "../**/*.stories.@(js|jsx|ts|tsx|mdx)"                                                                                                                                                              │
-│                                                                                                                                                                                                       │
-│   In Storybook 7, we have deprecated defining stories in MDX files, and consequently have changed the suffix to simply .mdx. Since Storybook 8, we have removed the support of story definition in    │
-│   MDX files entirely. Therefore '.stories.mdx' files aren't supported anymore.                                                                                                                        │
-│                                                                                                                                                                                                       │
-│   Now, since Storybook 8.0, we have removed support for .stories.mdx files.                                                                                                                           │
-│                                                                                                                                                                                                       │
-│   We can automatically migrate your 'stories' config to include any .mdx file instead of just .stories.mdx.                                                                                           │
-│   That would result in the following 'stories' config:                                                                                                                                                │
-│   "../**/*.@(mdx|stories.@(js|jsx|ts|tsx))"                                                                                                                                                           │
-│                                                                                                                                                                                                       │
-│   Additionally, we will run the 'mdx-to-csf' codemod for you, which tries to transform '*.stories.mdx' files to '*.stories.js' and '*.mdx' files.                                                     │
-│                                                                                                                                                                                                       │
-│   To learn more about this change, see: https://storybook.js.org/docs/migration-guide#storiesmdx-to-mdxcsf                                                                                            │
-│                                                                                                                                                                                                       │
-╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
-? Do you want to run the 'mdx-to-csf' migration on your project? » (Y/n)√ Do you want to run the 'mdx-to-csf' migration on your project? ... yes
-✅ Setting 'stories' config:
-[
-  "../**/*.@(mdx|stories.@(js|jsx|ts|tsx))"
-]
-? Please enter the glob for your MDX stories » ./src/**/*.stories.mdx√ Please enter the glob for your MDX stories ... ./src/**/*.stories.mdx
-=> Applying mdx-to-csf: 0 files
-=> No matching files for glob: ./src/**/*.stories.mdx
-The migration successfully updated your 'stories' config to include any .mdx file instead of just .stories.mdx.
-
-It also ran the 'mdx-to-csf' codemod to convert your MDX stories to CSF format.
-This codemod is not perfect however, so you may need to manually fix any issues it couldn't handle.
-✅ ran mdx-to-csf migration
-
-🔎 found a 'autodocsTrue' migration:
-╭ Automigration detected ────────────────────────────────────────────────────────────────────────────╮
-│                                                                                                    │
-│   We've changed the configuration of autodocs (previous docsPage), so now the value:               │
-│     - docs.autodocs: true -- means automatically create docs for every CSF file                    │
-│     - docs.autodocs: 'tag' -- means only create autodocs for CSF files with the 'autodocs' tag     │
-│     - docs.autodocs: false -- means never create autodocs                                          │
-│                                                                                                    │
-│   Based on your prior configuration,  we can set the `docs.autodocs` to keep your old behaviour:   │
-│                                                                                                    │
-│   docs: { autodocs: true }                                                                         │
-│                                                                                                    │
-│   More info: https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#autodocs-changes      │
-│                                                                                                    │
-╰────────────────────────────────────────────────────────────────────────────────────────────────────╯
-? Do you want to run the 'autodocsTrue' migration on your project? » (Y/n)√ Do you want to run the 'autodocsTrue' migration on your project? ... yes
-✅ Setting 'docs.autodocs' to true in main.js
-✅ ran autodocsTrue migration
-WARN An issue occurred while trying to find dependencies metadata using npm.
-
 ╭ Migration check ran with failures ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│                                                                                                                                                               │
-│   Successful migrations:                                                                                                                                      │
-│                                                                                                                                                               │
-│   mdx-to-csf, autodocsTrue                                                                                                                                    │
 │                                                                                                                                                               │
 │   Failed migrations:                                                                                                                                          │
 │                                                                                                                                                               │
