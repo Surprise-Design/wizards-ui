@@ -5,11 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WizardsDatepickerComponent } from './datepicker.component';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { CommonModule, registerLocaleData } from '@angular/common';
-import pl from '@angular/common/locales/pl'
+import localeZh from '@angular/common/locales/zh'
 import { NZ_DATE_LOCALE, NZ_I18N, pl_PL } from 'ng-zorro-antd/i18n';
 import { pl as PL } from 'date-fns/locale';
 
-registerLocaleData(pl);
+registerLocaleData(localeZh);
 
 const form = new FormGroup({
   text: new FormControl(null),
