@@ -62,17 +62,18 @@
       "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
-        "outputDir": "dist/storybook/ui",
-        "configDir": "libs/ui/.storybook",
-        "browserTarget": "ui:build-storybook",
-        "compodoc": false
+          "outputDir": "dist/storybook/ui",
+          "configDir": "libs/ui/.storybook",
+          "browserTarget": "ui:build",
+          "styles": ["libs/ui/styles/global_storybook.scss"],
+          "compodoc": false
       },
       "configurations": {
-        "ci": {
-          "quiet": true
-        }
+          "ci": {
+              "quiet": true
+          }
       }
-    },
+  },
     "static-storybook": {
       "executor": "@nx/web:file-server",
       "options": {

@@ -2,7 +2,7 @@
   <nz-form-item>
     <nz-form-label [nzRequired]="required">{{ label }}</nz-form-label>
     <nz-form-control [class.full-width]="fullWidth">
-      <nz-date-picker [class.full-width]="fullWidth" [nzFormat]="dateFormat" [formControlName]="controlName" [nzPlaceHolder]="label" [required]="required" [nzDisabled]="disabled"></nz-date-picker>
+      <nz-date-picker [class.full-width]="fullWidth" [nzDisabledDate]="nzDisabledDate" [nzFormat]="dateFormat" [formControlName]="controlName" [nzPlaceHolder]="label" [required]="required" [nzDisabled]="disabled"></nz-date-picker>
     </nz-form-control>
   </nz-form-item>
 </ng-container>

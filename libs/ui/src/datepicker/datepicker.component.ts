@@ -30,5 +30,6 @@ export class WizardsDatepickerComponent {
   @Input() disabled = false;
   @Input() fullWidth = true;
   @Input() locale = pl_PL;
+  @Input() nzDisabledDate: ((current: Date) => boolean) | void | string | number | undefined;
   constructor(public controlContainer: ControlContainer) {}
 }

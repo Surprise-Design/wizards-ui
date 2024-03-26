@@ -2,7 +2,7 @@
   <nz-form-item>
     <nz-form-label *ngIf="!!label" [nzRequired]="required">{{ label }}</nz-form-label>
     <nz-form-control>
-      <nz-select (ngModelChange)="onChangeEmitter($event)" [nzShowSearch]="allowSearch" [nzAllowClear]="allowClear" [nzPlaceHolder]="placeholder" [nzDisabled]="disabled" [formControlName]="controlName" [nzMode]="mode" [nzShowArrow]="showArrow">
+      <nz-select (ngModelChange)="onChangeEmitter($event)" [nzShowSearch]="allowSearch" [nzAllowClear]="allowClear" [nzPlaceHolder]="placeholder ? placeholder : label" [nzDisabled]="disabled" [formControlName]="controlName" [nzMode]="mode" [nzShowArrow]="showArrow">
         <nz-option *ngFor="let o of options" [nzLabel]="o.label" [nzValue]="o.value"></nz-option>
       </nz-select>
     </nz-form-control>
