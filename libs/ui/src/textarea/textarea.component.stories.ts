@@ -8,7 +8,7 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'WizardsTextareaComponent',
+  title: 'Textarea',
   component: WizardsTextareaComponent,
   decorators: [
     moduleMetadata({
@@ -50,11 +50,11 @@ export const Primary = Template.bind({});
 Primary.args = {
   disabled: false,
   label: 'Label',
+  maxCharacters: 10000,
+  maxRows: 6,
+  minRows: 4,
   placeholder: 'placeholder',
   required: false,
-  minRows: 4,
-  maxRows: 6,
   rows: 5,
-  maxCharacters: 10000,
 };
 

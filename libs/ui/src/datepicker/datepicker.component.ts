@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ControlContainer, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -12,6 +12,7 @@ registerLocaleData(pl);
   standalone: true,
   imports: [
     CommonModule,
+    NgIf,
     NzDatePickerModule,
     NzFormModule,
     FormsModule,
@@ -30,6 +31,7 @@ export class WizardsDatepickerComponent {
   @Input() disabled = false;
   @Input() fullWidth = true;
   @Input() locale = pl_PL;
-  @Input() nzDisabledDate: ((current: Date) => boolean) | void | string | number | undefined;
+  @Input() nzDisabledDate: ((current: Date) => boolean) | undefined;
+
   constructor(public controlContainer: ControlContainer) {}
 }

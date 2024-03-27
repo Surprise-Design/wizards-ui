@@ -20,7 +20,7 @@ const sampleOptions: SelectOptions[] = [
 ];
 
 export default {
-  title: 'WizardsSelectComponent',
+  title: 'SelectInput',
   component: WizardsSelectComponent,
   decorators: [
     moduleMetadata({
@@ -47,6 +47,7 @@ const Template: Story<WizardsSelectComponent> = (args: WizardsSelectComponent) =
           controlName="text"
           [required]="required"
           [allowClear]="allowClear"
+          [fullWidth]="fullWidth"
           [disabled]="disabled"
           [allowSearch]="allowSearch"
           [mode]="mode"
@@ -64,6 +65,7 @@ Primary.args = {
   allowClear: false,
   allowSearch: false,
   disabled: false,
+  fullWidth: true,
   label: 'Label',
   mode: 'default',
   options: sampleOptions,

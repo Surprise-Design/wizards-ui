@@ -20,7 +20,7 @@ import { NzCheckboxComponent } from 'ng-zorro-antd/checkbox';
 export class WizardsCheckboxComponent {
   @Input() label!: string;
   @Input() ngModel?: string;
-  @Input() controlName?: string;
+  @Input() controlName?: string | null;
   @Input() disabled = false;
   @Output() changed = new EventEmitter();
   constructor(public controlContainer: ControlContainer) { }

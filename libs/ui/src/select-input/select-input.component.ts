@@ -5,6 +5,11 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
+export interface SelectOptions {
+  label: string | number | null;
+  value: string | number | boolean | null;
+}
+
 @Component({
   standalone: true,
   imports: [
@@ -25,9 +30,10 @@ export class WizardsSelectComponent {
   @Input() allowSearch = false;
   @Input() controlName!: string;
   @Input() disabled = false;
+  @Input() fullWidth = true;
   @Input() label!: string;
   @Input() mode: 'multiple' | 'tags' | 'default' = 'default';
-  @Input() options: any[] = [];
+  @Input() options: SelectOptions[] = [];
   @Input() placeholder!: string;
   @Input() required = false;
   @Input() showArrow = true;

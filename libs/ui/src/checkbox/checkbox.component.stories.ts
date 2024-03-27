@@ -10,7 +10,7 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'WizardsCheckboxComponent',
+  title: 'Checkbox',
   component: WizardsCheckboxComponent,
   decorators: [
     moduleMetadata({
@@ -44,7 +44,7 @@ const Template: Story<WizardsCheckboxComponent> = (args: WizardsCheckboxComponen
 
 export const Primary = Template.bind({});
 Primary.args = {
+  disabled: false,
   label: 'Testowanie checkboxa',
   ngModel: '',
-  disabled: false,
 };

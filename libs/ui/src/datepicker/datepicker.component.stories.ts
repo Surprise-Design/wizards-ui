@@ -16,7 +16,7 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'WizardsDatepickerComponent',
+  title: 'Datepicker',
   component: WizardsDatepickerComponent,
   decorators: [
     moduleMetadata({
@@ -59,14 +59,14 @@ const Template: Story<WizardsDatepickerComponent> = (args: WizardsDatepickerComp
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'Testowanie datepickera',
   dateFormat: 'dd.MM.yyy',
-  required: false,
   disabled: false,
   fullWidth: true,
+  label: 'Testowanie datepickera',
   nzDisabledDate: (current: Date): boolean => {
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
     return current.getTime() < currentDate.getTime();
   },
+  required: false,
 };
