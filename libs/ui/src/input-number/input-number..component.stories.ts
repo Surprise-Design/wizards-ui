@@ -9,7 +9,7 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'WizardsInputNumberComponent',
+  title: 'InputNumber',
   component: WizardsInputNumberComponent,
   decorators: [
     moduleMetadata({
@@ -51,13 +51,13 @@ const Template: Story<WizardsInputNumberComponent> = (args: WizardsInputNumberCo
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'testowanie labela',
-  required: false,
   disabled: false,
-  min: 0,
-  max: 100000000,
-  step: 1,
-  precision: 2,
-  placeholder: 'placeholder',
   fullWidth: true,
+  label: 'testowanie labela',
+  max: 100000000,
+  min: 0,
+  placeholder: 'placeholder',
+  precision: 2,
+  required: false,
+  step: 1,
 };

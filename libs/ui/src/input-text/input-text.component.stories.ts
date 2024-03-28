@@ -8,7 +8,7 @@ const form = new FormGroup({
 });
 
 export default {
-  title: 'WizardsInputComponent',
+  title: 'Input',
   component: WizardsInputComponent,
   decorators: [
     moduleMetadata({
@@ -55,15 +55,15 @@ const Template: Story<WizardsInputComponent> = (args: WizardsInputComponent) => 
 export const Primary = Template.bind({});
 Primary.args = {
   disabled: false,
-  label: 'Label',
-  placeholder: 'placeholder',
-  required: false,
-  type: "text",
-  prefix: "prefix",
-  suffix: "suffix",
-  fullWidth: false,
   errorIfEmail: true,
   errorIfShort: 2,
   errorIfToLong: 8,
+  fullWidth: false,
+  label: 'Label',
+  placeholder: 'placeholder',
+  prefix: "prefix",
+  required: false,
+  suffix: "suffix",
+  type: "text",
 };
 
