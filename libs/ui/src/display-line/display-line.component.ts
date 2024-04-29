@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -26,8 +26,8 @@ export class WizardsDisplayLineComponent {
   @Input() secondValue?: string | number | null | undefined;
   @Input() isBasicDisplay = true;
   @Input() isEdit = false;
-  editing = false;
-  isHovered = false;
+  editing = signal<boolean>(false);
+  isHovered = signal<boolean>(false);
   get additionalValue(): string {
     if (!this.firstValue && this.isBasicDisplay) return '-';
     if (!this.firstValue && !this.isBasicDisplay && this.firstValue !== 0) return 'Brak danych';
@@ -38,11 +38,11 @@ export class WizardsDisplayLineComponent {
   }
 
   startEditing() {
-    this.editing = !this.editing;
-    this.isHovered = false;
+    this.editing.set(!this.editing());
+    this.isHovered.set(false);
   }
 
   toggleHover() {
-    this.isHovered = !this.isHovered;
+    this.isHovered.set(!this.isHovered());
   }
 }

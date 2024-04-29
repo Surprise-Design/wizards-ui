@@ -7,20 +7,20 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/angular:package",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "project": "libs/ui/ng-package.json"
+          "outputDir": "docs",
+          "configDir": "libs/ui/.storybook",
+          "browserTarget": "ui:build",
+          "styles": ["libs/ui/styles/global_storybook.scss"],
+          "compodoc": false
       },
       "configurations": {
-        "production": {
-          "tsConfig": "libs/ui/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "libs/ui/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
+          "ci": {
+              "quiet": true
+          }
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",
