@@ -32,7 +32,7 @@ export class WizardsInputNumberComponent {
   @Input() step = 1;
   @Input() placeholder!: string;
   @Input() precision = 2;
-  @Input() fullWidth = false;
+  @Input() fullWidth = true;
   @Output() changed = new EventEmitter();
 
   constructor(public controlContainer: ControlContainer) { }

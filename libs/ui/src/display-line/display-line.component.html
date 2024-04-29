@@ -1,4 +1,19 @@
-<dt [class.info-bar-label-looks]="isBasicDisplay" [class.components-label-looks]="!isBasicDisplay">
+<dt (mouseenter)="toggleHover()" (mouseleave)="toggleHover()" *ngIf="!editing" [class.info-bar-label-looks]="isBasicDisplay" [class.components-label-looks]="!isBasicDisplay">
   <span>{{ this.label }}</span>
 </dt>
-<dd [innerHTML]="additionalValue"></dd>
+<div class="display-line-container" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+  <dd *ngIf="!editing" [innerHTML]="additionalValue"></dd>
+  <button *ngIf="!editing && isHovered && isEdit" nz-button nzType="default" class="display-line-edit-button centered-button" (click)="startEditing()">
+    <span nz-icon nzType="edit" nzTheme="outline"></span>
+  </button>
+</div>
+<ng-container *ngIf="editing">
+  <div class="content-container">
+    <div class="wider-content">
+      <ng-content></ng-content>
+    </div>
+    <button nz-button nzType="default" class="display-line-edit-button" (click)="startEditing()">
+      <span nz-icon nzType="check" nzTheme="outline"></span>
+    </button>
+  </div>
+</ng-container>

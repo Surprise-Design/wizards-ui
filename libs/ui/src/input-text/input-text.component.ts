@@ -31,7 +31,7 @@ export class WizardsInputComponent {
   @Input() type = 'text';
   @Input() prefix?: string;
   @Input() suffix?: string;
-  @Input() fullWidth? = false
+  @Input() fullWidth? = true
   @Input() inputSize: 'large' | 'small' | 'default' = 'default'
   @Input() cy?: string;
   @Input() errorIfEmail = false;
