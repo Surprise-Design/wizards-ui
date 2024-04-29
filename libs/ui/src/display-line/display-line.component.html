@@ -2,18 +2,15 @@
   <dt (mouseenter)="toggleHover()" (mouseleave)="toggleHover()" [class.info-bar-label-looks]="isBasicDisplay" [class.components-label-looks]="!isBasicDisplay">
     <span>{{ this.label }}</span>
   </dt>
-}
-<div class="display-line-container" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
-  @if(!editing()) {
-    <dd [innerHTML]="additionalValue"></dd>
-  }
-  @if(isHovered() && !editing() && isEdit) {
+  <div class="display-line-container" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
+  <dd [innerHTML]="additionalValue"></dd>
+  @if(isHovered() && isEdit) {
     <button nz-button nzType="default" class="display-line-edit-button centered-button" (click)="startEditing()">
       <span nz-icon nzType="edit" nzTheme="outline"></span>
     </button>
   }
 </div>
-@if(editing()) {
+} @else {
   <ng-container>
     <div class="content-container">
       <div class="wider-content">

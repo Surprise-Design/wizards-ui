@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, signal, effect } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -45,4 +45,6 @@ export class WizardsDisplayLineComponent {
   toggleHover() {
     this.isHovered.set(!this.isHovered());
   }
+
+  showButton = effect(() => {this.isHovered() && !this.editing()});
 }
