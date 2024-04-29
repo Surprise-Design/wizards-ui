@@ -6,3 +6,26 @@
 .components-label-looks span {
   font-size: 24px;
 }
+
+.display-line-container {
+  display: flex;
+  gap: 10px;
+}
+
+.display-line-edit-button {
+  background-color: transparent;
+  border-color: transparent;
+  color: #ccc;
+}
+
+.centered-button {
+  bottom: 5px;
+}
+
+.content-container {
+  display: flex;
+}
+
+.wider-content {
+  flex: 1;
+}
