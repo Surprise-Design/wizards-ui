@@ -1,0 +1,18 @@
+.vertical-center {
+  display: flex;
+  align-items: center;
+  i {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .ant-page-header-heading-left {
+    flex-wrap: wrap;
+  }
+
+  .ant-page-header-heading-extra {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
