@@ -7,26 +7,9 @@
   </nz-page-header-title>
   <nz-page-header-subtitle class="animate__animated animate__fadeInUp animate__fadeInUp animate__delay-1s">{{ subTitle }}</nz-page-header-subtitle>
   <nz-breadcrumb nz-page-header-breadcrumb>
-    @if(firstBreadcrumb) {
-      <nz-breadcrumb-item class="animate__animated animate__fadeInUp">
-        <a [routerLink]="firstBreadcrumbLink">{{ firstBreadcrumb }}</a>
-      </nz-breadcrumb-item>
-    }
-    @if(secondBreadcrumb) {
-      <nz-breadcrumb-item class="animate__animated animate__fadeInUp animate__delay-1s">
-        <a [routerLink]="secondBreadcrumbLink">{{ secondBreadcrumb }}</a>
-      </nz-breadcrumb-item>
-    }
-    @if(thirdBreadcrumb) {
-      <nz-breadcrumb-item class="animate__animated animate__fadeInUp animate__delay-1s">
-        <a [routerLink]="thirdBreadcrumbLink">{{ thirdBreadcrumb }}</a>
-      </nz-breadcrumb-item>
-    }
-    @if(fourthBreadcrumb) {
-      <nz-breadcrumb-item class="animate__animated animate__fadeInUp animate__delay-1s">
-        <a [routerLink]="fourthBreadcrumbLink">{{ fourthBreadcrumb }}</a>
-      </nz-breadcrumb-item>
-    }
+    <nz-breadcrumb-item *ngFor="let breadcrumb of breadcrumbs" class="animate__animated animate__fadeInUp animate__delay-1s">
+      <a [routerLink]="breadcrumb.link">{{ breadcrumb.label }}</a>
+    </nz-breadcrumb-item>
   </nz-breadcrumb>
   <nz-page-header-extra class="animate__animated animate__fadeInUp animate__delay-2s">
     <ng-content></ng-content>
