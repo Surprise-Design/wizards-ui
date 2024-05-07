@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -28,26 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./breadcrumbs.component.scss']
 })
 
-export class WizardsBreadcrumbsComponent implements OnInit {
-  @Input() firstBreadcrumb?: string;
-  @Input() firstBreadcrumbLink?: string;
-  @Input() fourthBreadcrumb?: string;
-  @Input() fourthBreadcrumbLink?: string;
+export class WizardsBreadcrumbsComponent {
+  @Input() breadcrumbs: { label: string, link: string }[] = [];
   @Input() mainTitle?: string;
   @Input() mainIcon!: string;
-  @Input() secondBreadcrumb?: string;
-  @Input() secondBreadcrumbLink?: string;
-  @Input() thirdBreadcrumb?: string;
-  @Input() thirdBreadcrumbLink?: string;
   @Input() subTitle?: string;
-  breadcrumbs: { label: string | undefined; link: string | undefined }[] = [];
 
-  ngOnInit(): void {
-    this.breadcrumbs = [
-      { label: this.firstBreadcrumb, link: this.firstBreadcrumbLink },
-      { label: this.secondBreadcrumb, link: this.secondBreadcrumbLink },
-      { label: this.thirdBreadcrumb, link: this.thirdBreadcrumbLink },
-      { label: this.fourthBreadcrumb, link: this.fourthBreadcrumbLink },
-    ];
-  }
 }

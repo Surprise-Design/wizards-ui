@@ -30,16 +30,9 @@ const Template: Story<WizardsBreadcrumbsComponent> = (args: WizardsBreadcrumbsCo
     return {
       template: `
         <wiz-breadcrumbs
-        [firstBreadcrumb]="firstBreadcrumb"
-        [firstBreadcrumbLink]="firstBreadcrumbLink"
-        [fourthBreadcrumb]="fourthBreadcrumb"
-        [fourthBreadcrumbLink]="fourthBreadcrumbLink"
+        [breadcrumbs]="breadcrumbs"
         [mainIcon]="mainIcon"
         [mainTitle]="mainTitle"
-        [secondBreadcrumb]="secondBreadcrumb"
-        [secondBreadcrumbLink]="secondBreadcrumbLink"
-        [thirdBreadcrumb]="thirdBreadcrumb"
-        [thirdBreadcrumbLink]="thirdBreadcrumbLink"
         [subTitle]="subTitle">
         <button nz-button nzType="default">
           <span nz-icon nzType="edit" nzTheme="outline"></span>
@@ -52,16 +45,14 @@ const Template: Story<WizardsBreadcrumbsComponent> = (args: WizardsBreadcrumbsCo
 
 export const Primary = Template.bind({});
 Primary.args = {
-  firstBreadcrumb: 'Jeden',
-  firstBreadcrumbLink: '/test',
-  fourthBreadcrumb: 'Cztery',
-  fourthBreadcrumbLink: '/test4',
+  breadcrumbs: [
+    { label: 'Jeden', link: '/test1' },
+    { label: 'Dwa', link: '/test2' },
+    { label: 'Trzy', link: '/test3' },
+    { label: 'Cztery', link: '/test4' }
+  ],
   mainIcon: 'info-circle',
   mainTitle: 'Testowy nagłówek',
-  secondBreadcrumb: 'Dwa',
-  secondBreadcrumbLink: '/test2',
   subTitle: 'Zarządzaj breadcrumbami',
-  thirdBreadcrumb: 'Trzy',
-  thirdBreadcrumbLink: '/test3',
 };
 
