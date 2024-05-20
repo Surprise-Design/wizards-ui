@@ -1,0 +1,48 @@
+<div class="big-screen-only">
+  <div class="statistic-card additional-container">
+    <div class="card animate__animated animate__fadeInUp animate__delay-{{ i }}s" *ngFor="let statistic of statisticTable; let i = index">
+      <div class="card-circle">
+        <div class="card-border">
+          <i nz-icon [nzType]="statistic.icon" nzTheme="outline" class="statistic-icon"></i>
+        </div>
+      </div>
+      @if(statistic.value.isMoney) {
+        <p class="statistic-value">{{ statistic.value.value | currency : "PLN" }}</p>
+      }
+      @if(!statistic.value.isMoney) {
+        <p class="statistic-value">{{ statistic.value.value }}</p>
+      }
+      <p class="statistic-name">{{ statistic.label }}</p>
+      @if(statistic.info) {
+        <i nz-icon nz-popover [nzType]="'question-circle'" class="info-icon" [nzPopoverContent]="statistic.info"></i>
+      }
+    </div>
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<nz-carousel [nzDots]="false" [nzAutoPlay]="true">
+  <div nz-carousel-content *ngFor="let statistic of statisticTable; let i = index">
+    <div class="statistic-card additional-container">
+      <div class="card animate__animated animate__fadeInUp animate__delay-{{ i }}s" >
+        <div class="card-circle">
+          <div class="card-border">
+            <i nz-icon [nzType]="statistic.icon" nzTheme="outline" class="statistic-icon"></i>
+          </div>
+        </div>
+        @if(statistic.value.isMoney) {
+          <p class="statistic-value">{{ statistic.value.value | currency : "PLN" }}</p>
+        }
+        @if(!statistic.value.isMoney) {
+          <p class="statistic-value">{{ statistic.value.value }}</p>
+        }
+        <p class="statistic-name">{{ statistic.label }}</p>
+        @if(statistic.info) {
+          <i nz-icon nz-popover [nzType]="'question-circle'" class="info-icon" [nzPopoverContent]="statistic.info"></i>
+        }
+      </div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</nz-carousel>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
