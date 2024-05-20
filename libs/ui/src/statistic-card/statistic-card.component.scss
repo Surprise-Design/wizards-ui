@@ -12,7 +12,7 @@
     position: relative;
     min-width: 15%;
     border-radius: 20px;
-    box-shadow: 0 0 6px 0 #bfbfbf;
+    box-shadow: 0 0 6px 0 $gray-shadow;
     padding: 25px 25px 10px 25px;
     width: 100%;
 
@@ -20,9 +20,9 @@
       width: 65px;
       height: 65px;
       overflow: hidden;
-      background-color: #1f2c4f;
+      background-color: $dark-blue;
       opacity: 1;
-      background-image: repeating-radial-gradient(circle at 100% 0, transparent 0, #1f2c4f 50px), linear-gradient(0deg, #234666 0%, #1f2c4f 100%);
+      background-image: repeating-radial-gradient(circle at 100% 0, transparent 0, $dark-blue 50px), $dark-blue-gradient;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
@@ -31,7 +31,7 @@
       margin-top: -60px;
 
       .card-border {
-        border: 2px solid #fff;
+        border: 2px solid $white;
         border-radius: 50%;
         height: 100%;
         width: 100%;
@@ -49,12 +49,12 @@
 }
 
 .statistic-icon {
-  color: #fff;
+  color: $white;
   font-size: 25px
 }
 
 .statistic-value {
-  color: black;
+  color: $black;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -63,7 +63,7 @@
 }
 
 .statistic-name {
-  color: gray;
+  color: $gray;
   text-align: center;
   margin: 0;
 }
@@ -123,5 +123,31 @@ nz-carousel {
 @media screen and (min-width: $max_mobile_width) {
   nz-carousel {
     display: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@for $i from 0 through 5 {
+  .animate__delay-#{$i}s {
+    animation-delay: #{$i}s;
   }
 }

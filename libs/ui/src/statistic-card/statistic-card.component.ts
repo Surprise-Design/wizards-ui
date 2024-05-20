@@ -1,5 +1,5 @@
 import { CommonModule, CurrencyPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
@@ -32,10 +32,10 @@ export interface Statistic {
   ],
   selector: 'wiz-statistic-card',
   templateUrl: './statistic-card.component.html',
-  styleUrls: ['./statistic-card.component.scss']
+  styleUrls: ['./statistic-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class WizardsStatisticCardComponent {
   @Input() statisticTable: Statistic[] = [];
-
 }
