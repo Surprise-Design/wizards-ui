@@ -1,0 +1,32 @@
+<ng-template #statisticCard let-statistic let-index="index">
+  <div class="card animate__animated animate__fadeInUp animate__delay-{{ index }}s">
+    <div class="card-circle">
+      <div class="card-border">
+        <i nz-icon [nzType]="statistic.icon" nzTheme="outline" class="statistic-icon"></i>
+      </div>
+    </div>
+    <p class="statistic-value">{{ statistic.value.isMoney ? (statistic.value.value | currency : 'PLN') : statistic.value.value }}</p>
+    <p class="statistic-name">{{ statistic.label }}</p>
+    @if(statistic.info) {
+      <i nz-icon nz-popover [nzType]="'question-circle'" class="info-icon" [nzPopoverContent]="statistic.info"></i>
+    }
+  </div>
+</ng-template>
+
+<div class="big-screen-only">
+  <div class="statistic-card additional-container">
+    @for(statistic of statisticTable; track statistic.label) {
+      <ng-container *ngTemplateOutlet="statisticCard; context: { $implicit: statistic, index: $index }"></ng-container>
+    }
+  </div>
+</div>
+
+<nz-carousel [nzDots]="false" [nzAutoPlay]="true">
+  @for(statistic of statisticTable; track statistic.label) {
+    <div nz-carousel-content>
+      <div class="statistic-card additional-container">
+        <ng-container *ngTemplateOutlet="statisticCard; context: { $implicit: statistic, index: $index }"></ng-container>
+      </div>
+    </div>
+  }
+</nz-carousel>

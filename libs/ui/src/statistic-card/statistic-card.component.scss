@@ -1,0 +1,153 @@
+@import '../../styles/variable';
+
+.statistic-card {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+  margin-top: 35px;
+  padding-bottom: 10px;
+  grid-template-columns: repeat(4, 1fr);
+
+  .card {
+    position: relative;
+    min-width: 15%;
+    border-radius: 20px;
+    box-shadow: 0 0 6px 0 $gray-shadow;
+    padding: 25px 25px 10px 25px;
+    width: 100%;
+
+    .card-circle {
+      width: 65px;
+      height: 65px;
+      overflow: hidden;
+      background-color: $dark-blue;
+      opacity: 1;
+      background-image: repeating-radial-gradient(circle at 100% 0, transparent 0, $dark-blue 50px), $dark-blue-gradient;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      padding: 10px;
+      margin: auto;
+      margin-top: -60px;
+
+      .card-border {
+        border: 2px solid $white;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-transition: -webkit-transform 1s;
+      }
+
+      .card-border:hover {
+        -webkit-transform: rotate(360deg) translateZ(0);
+      }
+    }
+  }
+}
+
+.statistic-icon {
+  color: $white;
+  font-size: 25px
+}
+
+.statistic-value {
+  color: $black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.statistic-name {
+  color: $gray;
+  text-align: center;
+  margin: 0;
+}
+
+.info-icon {
+    font-size: 20px;
+    position: absolute;
+    bottom: 70px;
+    right: 10px;
+  }
+
+nz-carousel {
+  height: 160px;
+  width: 100%;
+}
+
+.statistic-card.additional-container {
+  grid-template-columns: repeat(5, 1fr);
+  margin-left: 8px;
+}
+
+.big-screen-only {
+  width: 95%;
+}
+
+@media screen and (max-width: $max_mobile_width) {
+  .statistic-card {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .statistic-card.additional-container {
+    grid-template-columns: 1fr;
+  }
+
+  nz-carousel {
+    height: 160px;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: $min_computer_width) and (max-width: $max_tablet_width) {
+  .statistic-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .statistic-card.additional-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: $max_mobile_width) {
+  .big-screen-only {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $max_mobile_width) {
+  nz-carousel {
+    display: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@for $i from 0 through 5 {
+  .animate__delay-#{$i}s {
+    animation-delay: #{$i}s;
+  }
+}
