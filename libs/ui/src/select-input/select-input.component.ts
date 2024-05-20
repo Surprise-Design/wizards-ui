@@ -6,8 +6,8 @@ import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 
 export interface SelectOptions {
-  label: string | number | null | any;
-  value: string | number | boolean | null | any;
+  label: string | number | null;
+  value: string | number | boolean | null;
 }
 
 @Component({
