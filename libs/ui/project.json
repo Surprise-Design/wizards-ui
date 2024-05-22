@@ -62,7 +62,7 @@
       "executor": "@storybook/angular:build-storybook",
       "outputs": ["{options.outputDir}"],
       "options": {
-          "outputDir": "dist/storybook/ui",
+          "outputDir": "docs",
           "configDir": "libs/ui/.storybook",
           "browserTarget": "ui:build",
           "styles": ["libs/ui/styles/global_storybook.scss"],

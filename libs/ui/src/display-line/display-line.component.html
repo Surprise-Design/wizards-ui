@@ -3,13 +3,16 @@
     <span>{{ this.label }}</span>
   </dt>
   <div class="display-line-container" (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
-  <dd [innerHTML]="additionalValue"></dd>
-  @if(isHovered() && isEdit) {
-    <button nz-button nzType="default" class="display-line-edit-button centered-button" (click)="startEditing()">
-      <span nz-icon nzType="edit" nzTheme="outline"></span>
-    </button>
-  }
-</div>
+    <ng-content select="[additional-content]"></ng-content>
+    @if(shouldDisplayAdditionalValue) {
+      <dd [innerHTML]="additionalValue"></dd>
+    }
+    @if(isHovered() && isEdit) {
+      <button nz-button nzType="default" class="display-line-edit-button centered-button" (click)="startEditing()">
+        <span nz-icon nzType="edit" nzTheme="outline"></span>
+      </button>
+    }
+  </div>
 } @else {
   <ng-container>
     <div class="content-container">
@@ -22,4 +25,3 @@
     </div>
   </ng-container>
 }
-

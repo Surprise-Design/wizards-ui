@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Optional, Output } from '@angular/core';
 import { ControlContainer, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -39,7 +39,7 @@ export class WizardsSelectComponent {
   @Input() showArrow = true;
   @Output() changed = new EventEmitter();
 
-  constructor(public controlContainer: ControlContainer) { }
+  constructor(@Optional() public controlContainer: ControlContainer) { }
 
   onChangeEmitter(event: any): void {
     this.changed.emit(event);

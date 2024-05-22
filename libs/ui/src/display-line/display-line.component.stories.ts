@@ -36,6 +36,9 @@ const Template: Story<WizardsDisplayLineComponent> = (args: WizardsDisplayLineCo
           [firstValue]="firstValue"
           [secondValue]="secondValue">
           <wiz-input-text controlName="text" [label]="label"></wiz-input-text>
+          <dd additional-content>
+          <strong style="font-size: 18px; color: #87d068">Additional content</strong>
+        </dd>
         </wiz-display-line>
       `,
       props: args,
