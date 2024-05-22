@@ -10,6 +10,7 @@ const form = new FormGroup({
 export default {
   title: 'Display-line',
   component: WizardsDisplayLineComponent,
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [FormsModule, ReactiveFormsModule, WizardsDisplayLineComponent, WizardsInputComponent],
@@ -25,6 +26,14 @@ export default {
         },
       ),
     ],
+    argTypes: {
+      isBasicDisplay: {
+        description: 'It changes label size and colour to black',
+      },
+      isEdit: {
+        description: 'After enable it you can add ng-content inside'
+      }
+    },
 } as Meta<WizardsDisplayLineComponent>;
 
 const Template: Story<WizardsDisplayLineComponent> = (args: WizardsDisplayLineComponent) => {

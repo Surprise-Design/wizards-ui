@@ -39,9 +39,12 @@ export class WizardsDisplayLineComponent {
     return `${this.firstValue} ${this.secondValue}`;
   }
 
+  valueExist(value: string | number | null | undefined): boolean {
+    return value !== null && value !== undefined && value !== '';
+  }
+
   get shouldDisplayAdditionalValue(): boolean {
-    return this.firstValue !== null && this.firstValue !== undefined && this.firstValue !== '' ||
-           this.secondValue !== null && this.secondValue !== undefined && this.secondValue !== '';
+    return this.valueExist(this.firstValue) || this.valueExist(this.secondValue);
   }
 
   startEditing() {
