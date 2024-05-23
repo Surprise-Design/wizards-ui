@@ -25,6 +25,107 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    disabled: {
+      description: 'Disable input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    errorIfEmail: {
+      description: 'Enable error for mail',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    errorIfShort: {
+      description: 'Minimum number of characters required in input',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    errorIfToLong: {
+      description: 'Maximum number of characters required in input',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    fullWidth: {
+      description: 'Set class full-width which set width 100% for input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    label: {
+      description: 'Main title',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    placeholder: {
+      description: 'Placeholder of input',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    prefix: {
+      description: 'Prefix string for the input',
+      control: {
+        type: 'string',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    required: {
+      description: 'Set input to required',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    suffix: {
+      description: 'Suffix string for the input',
+      control: {
+        type: 'string',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    type: {
+      description: 'Type of an input',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+  },
 } as Meta<WizardsInputComponent>;
 
 const Template: Story<WizardsInputComponent> = (args: WizardsInputComponent) => {

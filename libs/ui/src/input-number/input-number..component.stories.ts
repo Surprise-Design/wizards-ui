@@ -26,6 +26,89 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    disabled: {
+      description: 'Disable input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    fullWidth: {
+      description: 'Set class full-width which set width 100% for number input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    label: {
+      description: 'Main title',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    max: {
+      description: 'Maximal number of input',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    min: {
+      description: 'Minimal number of input',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    placeholder: {
+      description: 'Placeholder of input',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    precision: {
+      description: 'Precision of input value',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    required: {
+      description: 'Set input to required',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    step: {
+      description: 'The number to which the current value is increased or decreased',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+  },
 } as Meta<WizardsInputNumberComponent>;
 
 const Template: Story<WizardsInputNumberComponent> = (args: WizardsInputNumberComponent) => {

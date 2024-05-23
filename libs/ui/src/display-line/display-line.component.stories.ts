@@ -27,12 +27,51 @@ export default {
       ),
     ],
     argTypes: {
+      firstValue: {
+        description: 'First label under the label',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
       isBasicDisplay: {
         description: 'It changes label size and colour to black',
+        control: {
+          type: 'boolean',
+        },
+        table: {
+          type: { summary: 'boolean' },
+        },
       },
       isEdit: {
-        description: 'After enable it you can add ng-content inside'
-      }
+        description: 'After enable it you can add ng-content inside',
+        control: {
+          type: 'boolean',
+        },
+        table: {
+          type: { summary: 'boolean' },
+        },
+      },
+      label: {
+        description: 'Main title',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
+      secondValue: {
+        description: 'Second label under the label',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
     },
 } as Meta<WizardsDisplayLineComponent>;
 
