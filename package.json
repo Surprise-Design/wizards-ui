@@ -8,6 +8,7 @@
     "storybook": "nx storybook ui",
     "wizards-ui": "nx run wizards-ui:serve",
     "build": "nx build ui",
+    "build-storybook": "nx build-storybook ui",
     "publish": "cd dist/libs/ui && npm publish",
     "test": "nx test"
   },

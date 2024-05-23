@@ -10,6 +10,7 @@ const form = new FormGroup({
 export default {
   title: 'Display-line',
   component: WizardsDisplayLineComponent,
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [FormsModule, ReactiveFormsModule, WizardsDisplayLineComponent, WizardsInputComponent],
@@ -25,6 +26,53 @@ export default {
         },
       ),
     ],
+    argTypes: {
+      firstValue: {
+        description: 'First label under the label',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
+      isBasicDisplay: {
+        description: 'It changes label size and colour to black',
+        control: {
+          type: 'boolean',
+        },
+        table: {
+          type: { summary: 'boolean' },
+        },
+      },
+      isEdit: {
+        description: 'After enable it you can add ng-content inside',
+        control: {
+          type: 'boolean',
+        },
+        table: {
+          type: { summary: 'boolean' },
+        },
+      },
+      label: {
+        description: 'Main title',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
+      secondValue: {
+        description: 'Second label under the label',
+        control: {
+          type: 'text',
+        },
+        table: {
+          type: { summary: 'string' },
+        },
+      },
+    },
 } as Meta<WizardsDisplayLineComponent>;
 
 const Template: Story<WizardsDisplayLineComponent> = (args: WizardsDisplayLineComponent) => {
@@ -36,6 +84,9 @@ const Template: Story<WizardsDisplayLineComponent> = (args: WizardsDisplayLineCo
           [firstValue]="firstValue"
           [secondValue]="secondValue">
           <wiz-input-text controlName="text" [label]="label"></wiz-input-text>
+          <dd additional-content>
+          <strong style="font-size: 18px; color: #87d068">Additional content</strong>
+        </dd>
         </wiz-display-line>
       `,
       props: args,

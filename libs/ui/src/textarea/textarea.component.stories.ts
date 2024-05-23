@@ -25,6 +25,80 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    disabled: {
+      description: 'Disable input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    label: {
+      description: 'Main title',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    maxCharacters: {
+      description: 'Maximal number of characters in input',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    maxRows: {
+      description: 'Maximal number of textarea rows',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    minRows: {
+      description: 'Minimal number of textarea rows',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+    placeholder: {
+      description: 'Placeholder of input',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    required: {
+      description: 'Set input to required',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    rows: {
+      description: 'Number of default textarea rows',
+      control: {
+        type: 'number',
+      },
+      table: {
+        type: { summary: 'number' },
+      },
+    },
+  },
 } as Meta<WizardsTextareaComponent>;
 
 const Template: Story<WizardsTextareaComponent> = (args: WizardsTextareaComponent) => {
@@ -51,10 +125,10 @@ Primary.args = {
   disabled: false,
   label: 'Label',
   maxCharacters: 10000,
-  maxRows: 6,
-  minRows: 4,
+  maxRows: 4,
+  minRows: 2,
   placeholder: 'placeholder',
   required: false,
-  rows: 5,
+  rows: 3,
 };
 

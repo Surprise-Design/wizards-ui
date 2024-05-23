@@ -27,6 +27,40 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    disabled: {
+      description: 'Disable the checkboox',
+      control: {
+        type: 'object',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    label: {
+      description: 'Main label next to checkbox',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    ngModel: {
+      description: 'ngModel can be used instead of controlName',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+  },
+  args: {
+    disabled: false,
+    label: 'Checkbox',
+    ngModel: 'string',
+  },
 } as Meta<WizardsCheckboxComponent>;
 
 const Template: Story<WizardsCheckboxComponent> = (args: WizardsCheckboxComponent) => {

@@ -26,6 +26,22 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    message: {
+      description: 'Message inside alert',
+      control: 'text'
+
+    },
+    type: {
+      description: 'Type of an message',
+      control: 'select',
+      options: ['success', 'info', 'warning', 'error']
+    },
+  },
+  args: {
+    message: 'Alert message',
+    type: 'error',
+  },
 } as Meta<WizardsErrorMessageComponent>;
 
 const Template: Story<WizardsErrorMessageComponent> = (args: WizardsErrorMessageComponent) => {

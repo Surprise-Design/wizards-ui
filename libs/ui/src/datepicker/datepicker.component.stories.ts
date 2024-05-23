@@ -38,6 +38,56 @@ export default {
       },
     ),
   ],
+  argTypes: {
+    dateFormat: {
+      description: 'Format of the date',
+      control: {
+        type: 'object',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    disabled: {
+      description: 'Disable input for date',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    fullWidth: {
+      description: 'Set class full-width which set width 100% for date input',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+    label: {
+      description: 'Main title of input, also placeholder',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    nzDisabledDate: {
+      description: 'Function that disable specific dates in datepicker',
+    },
+    required: {
+      description: 'Set input to required',
+      control: {
+        type: 'boolean',
+      },
+      table: {
+        type: { summary: 'boolean' },
+      },
+    },
+  },
 } as Meta<WizardsDatepickerComponent>;
 
 const Template: Story<WizardsDatepickerComponent> = (args: WizardsDatepickerComponent) => {

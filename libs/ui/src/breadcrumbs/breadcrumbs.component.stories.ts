@@ -16,6 +16,7 @@ class MockActivatedRoute {
 export default {
   title: 'Breadcrumbs',
   component: WizardsBreadcrumbsComponent,
+  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [FormsModule, NzButtonModule, NzIconModule, ReactiveFormsModule, WizardsBreadcrumbsComponent, RouterModule, HttpClientModule, BrowserAnimationsModule],
@@ -24,6 +25,50 @@ export default {
       ],
     }),
   ],
+  argTypes: {
+    breadcrumbs: {
+      description: 'An array of objects containing label and link',
+      control: {
+        type: 'object',
+      },
+      table: {
+        type: { summary: 'Array<{ label: string; link: string }>' },
+      },
+    },
+    mainIcon: {
+      description: 'Main icon for Title of breadcrumbs',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    mainTitle: {
+      description: 'Main Title under breadcrumbs',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+    subTitle: {
+      description: 'Gray subtitle next to the title',
+      control: {
+        type: 'text',
+      },
+      table: {
+        type: { summary: 'string' },
+      },
+    },
+  },
+  args: {
+    breadcrumbs: [],
+    mainIcon: 'info-circle',
+    mainTitle: 'Main title',
+    subTitle: 'Sub title',
+  },
 } as Meta<WizardsBreadcrumbsComponent>;
 
 const Template: Story<WizardsBreadcrumbsComponent> = (args: WizardsBreadcrumbsComponent) => {

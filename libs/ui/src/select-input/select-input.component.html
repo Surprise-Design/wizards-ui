@@ -1,4 +1,4 @@
-<ng-container [formGroup]="$any(controlContainer.control)">
+<ng-template #selectInput>
   <nz-form-item>
     <nz-form-label *ngIf="!!label" [nzRequired]="required">{{ label }}</nz-form-label>
     <nz-form-control [class.full-width]="fullWidth">
@@ -7,4 +7,13 @@
       </nz-select>
     </nz-form-control>
   </nz-form-item>
-</ng-container>
+</ng-template>
+@if(controlContainer && controlContainer.control) {
+  <ng-container [formGroup]="$any(controlContainer.control)">
+    <ng-container *ngTemplateOutlet="selectInput"></ng-container>
+  </ng-container>
+} @else {
+  <ng-container>
+    <ng-container *ngTemplateOutlet="selectInput"></ng-container>
+  </ng-container>
+}

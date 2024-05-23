@@ -24,6 +24,17 @@ export default {
       ],
     }),
   ],
+  argTypes: {
+    statisticTable: {
+      description: 'An array of objects containing value, info, label and icon',
+      control: {
+        type: 'object',
+      },
+      table: {
+        type: { summary: 'Array<{ value: { value: number | string; isMoney?: boolean }, info?: string, label: string, icon: string }>' },
+      },
+    },
+  }
 } as Meta<WizardsStatisticCardComponent>;
 
 const Template: Story<WizardsStatisticCardComponent> = (args: WizardsStatisticCardComponent) => {
